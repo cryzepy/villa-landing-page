@@ -482,6 +482,7 @@ button { font-family: inherit; cursor: pointer; }
   margin-bottom: 10px;
 }
 
+
 .testimonial-avatar {
   width: 38px;
   height: 38px;
@@ -496,7 +497,6 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .testimonial-name { font-weight: 700; font-size: 0.95rem; }
-.testimonial-location { font-size: 0.82rem; color: var(--muted-text); }
 .testimonial-quote { font-size: 0.92rem; color: var(--text-color); margin: 0; }
 
 /* ============================================================================
