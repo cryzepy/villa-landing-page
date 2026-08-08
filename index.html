@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- [PROFIL-KLIEN] Judul tab browser — sesuaikan nama bisnis -->
+  <title id="page-title">Satyagraha Suites Villa | Penginapan &amp; Penyewaan</title>
+  <!-- [PROFIL-KLIEN] Deskripsi meta (SEO) — sesuaikan dengan bisnis -->
+  <meta name="description" content="Satyagraha Suites Villa - vila pribadi dengan kolam renang di tengah Kota , Malang, Jawa Timur. Pesan langsung melalui WhatsApp." />
+  <meta name="theme-color" content="#003580" />
+
+  <!-- [PROFIL-KLIEN] Favicon (logo tab browser) — ganti href sesuai file logo -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/logoipsum-436.svg" id="site-favicon" />
+
+  <!-- Font Awesome (CDN) — ikon pihak ketiga untuk fasilitas, sosial media, dan tombol -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!--
+    ============================================================================
+    SEO SCHEMA MARKUP (JSON-LD) — TARUH DI SINI
+    ============================================================================
+    Sesuaikan @type dengan jenis bisnis klien:
+      - "LodgingBusiness" -> untuk vila / penginapan / homestay
+      - "LocalBusiness"    -> untuk usaha lokal umum
+      - "Product"          -> bisa ditambahkan per item di dalam "products"
+
+    Contoh:
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Nama Bisnis Anda",
+      "image": "https://url-gambar-utama.jpg",
+      "telephone": "+62xxxxxxxxxx",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Alamat lengkap",
+        "addressLocality": "Kota",
+        "addressCountry": "ID"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "8.8",
+        "reviewCount": "325"
+      },
+      "priceRange": "$$"
+    }
+    </script>
+    ============================================================================
+  -->
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!--
+    ============================================================================
+    PETUNJUK UPDATE PROFIL BISNIS (untuk AI agent / developer)
+    ============================================================================
+    Seluruh konten di halaman ini sudah DITULIS LANGSUNG di HTML (bukan dirender
+    JavaScript) agar mudah di-crawl mesin pencari.
+
+    Saat diminta update profil, cari kata kunci:  [PROFIL-KLIEN]
+    Setiap elemen yang diberi penanda [PROFIL-KLIEN] adalah data bisnis yang
+    wajib disesuaikan. Ganti nilainya sesuai bisnis baru.
+    ============================================================================
+  -->
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#hero" class="brand" id="brand-logo" aria-label="Kembali ke beranda">
+          <!-- [PROFIL-KLIEN] Logo bisnis di header — ganti URL gambar di background-image -->
+          <span class="brand-logo-img has-logo" id="logo-img" style="background-image:url('assets/img/logoipsum-436.svg')" aria-hidden="true"></span>
+          <!-- [PROFIL-KLIEN] Nama bisnis di header -->
+          <span class="brand-name" id="brand-name">Satyagraha Suites Villa</span>
+        </a>
+
+        <nav class="main-nav" id="main-nav" aria-label="Navigasi utama">
+          <ul>
+            <li><a href="#hero">Beranda</a></li>
+            <li><a href="#katalog">Katalog</a></li>
+            <li><a href="#ulasan">Ulasan</a></li>
+            <li><a href="#lokasi">Lokasi</a></li>
+            <li><a href="#kontak" class="nav-cta">Hubungi Kami</a></li>
+          </ul>
+        </nav>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================== HERO ============================== -->
+    <!-- [PROFIL-KLIEN] Ganti URL di --hero-image dengan foto utama bisnis Anda -->
+    <section class="hero" id="hero" style="--hero-image:url('../img/view-vila-dari-atas.png')">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Selamat Datang</p>
+          <!-- [PROFIL-KLIEN] Judul utama (hero) -->
+          <h1 id="hero-title">Liburan Tenang di Satyagraha Suites Villa</h1>
+          <!-- [PROFIL-KLIEN] Subjudul (hero) -->
+          <p class="hero-subtitle" id="hero-subtitle">Vila pribadi dengan kolam renang. Nyaman untuk keluarga maupun rombongan kecil.</p>
+          <div class="hero-actions">
+            <a href="#katalog" class="btn btn-primary">Lihat Katalog</a>
+            <a href="#kontak" class="btn btn-outline">Hubungi Kami</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel card" id="hero-panel">
+          <!-- [PROFIL-KLIEN] Skor/ulasan per platform — salin-tempel baris untuk menambah sumber -->
+          <div class="rating-list" id="rating-list">
+            <div class="rating-row">
+              <span class="rating-badge">8.8/10</span>
+              <div class="rating-copy">
+                <strong>Booking.com</strong>
+                <span>Hebat · 325 ulasan</span>
+              </div>
+            </div>
+            <div class="rating-row">
+              <span class="rating-badge">4.7/5</span>
+              <div class="rating-copy">
+                <strong>Google</strong>
+                <span>Sangat Baik · 189 ulasan</span>
+              </div>
+            </div>
+          </div>
+          <!-- [PROFIL-KLIEN] Kutipan singkat dari tamu (boleh dikosongkan) -->
+          <p class="rating-quote" id="rating-quote">"Menginap di sini menyenangkan dan sangat mudah diakses."</p>
+          <hr class="divider" id="hero-panel-divider" />
+          <!-- [PROFIL-KLIEN] Alamat di panel hero -->
+          <p class="hero-panel-address" id="hero-panel-address">Jl. Citandui No.68, Purwantoro, Kec. Blimbing, Kota Malang, Jawa Timur</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================== KATALOG ============================== -->
+    <section class="catalog" id="katalog">
+      <div class="container">
+        <header class="section-heading">
+          <p class="eyebrow">Katalog</p>
+          <h2>Pilihan Kami</h2>
+          <p class="section-desc">Pilih kamar atau barang yang sesuai kebutuhan Anda, lalu pesan langsung melalui WhatsApp.</p>
+        </header>
+
+        <!-- [PROFIL-KLIEN] Kartu produk — salin-tempel blok <article> untuk menambah produk.
+             Ganti: gambar (src), alt, nama, harga, deskripsi, dan link WhatsApp.
+             Format WhatsApp: https://wa.me/<nomor tanpa '+'/'0'>?text=<pesan> -->
+        <div class="product-grid" id="product-grid" aria-live="polite">
+          <article class="product-card card" id="product-kamar-deluxe">
+            <img class="product-card-img" src="assets/img/Cuplikan layar 2026-08-08 151501.png" alt="Kamar dengan Billiard" loading="lazy" />
+            <div class="product-card-body">
+              <h3>Kamar dengan Billiard</h3>
+              <p class="product-price">Rp 450.000 / malam</p>
+              <p class="product-desc">Kamar nyaman dengan billiard table di dalamnya.</p>
+              <a class="btn btn-card" href="https://api.whatsapp.com/send/?phone=6282139124468&text=Halo%20Satyagraha%20Suites%20Villa,%20saya%20ingin%20memesan%20%22Kamar%20dengan%20Billiard%22%20(Rp%20450.000%20/%20malam).%20Apakah%20masih%20tersedia&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">Pesan Sekarang</a>
+            </div>
+          </article>
+
+          <article class="product-card card" id="product-kamar-suite">
+            <img class="product-card-img" src="assets/img/Cuplikan layar 2026-08-08 151611.png" alt="Suite Kolam Pribadi" loading="lazy" />
+            <div class="product-card-body">
+              <h3>Suite Kolam Pribadi</h3>
+              <p class="product-price">Rp 850.000 / malam</p>
+              <p class="product-desc">Suite luas dengan kolam renang pribadi dan area santai outdoor.</p>
+              <a class="btn btn-card" href="https://api.whatsapp.com/send/?phone=6282139124468&text=Halo%20Satyagraha%20Suites%20Villa,%20saya%20ingin%20memesan%20%22Suite%20Kolam%20Pribadi%22%20(Rp%20850.000%20/%20malam).%20Apakah%20masih%20tersedia&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">Pesan Sekarang</a>
+            </div>
+          </article>
+
+          <article class="product-card card" id="product-villa-keluarga">
+            <img class="product-card-img" src="assets/img/Cuplikan layar 2026-08-08 151512.png" alt="Villa Keluarga (2 Kamar)" loading="lazy" />
+            <div class="product-card-body">
+              <h3>Villa Keluarga (2 Kamar)</h3>
+              <p class="product-price">Rp 1.200.000 / malam</p>
+              <p class="product-desc">Cocok untuk keluarga besar, 2 kamar tidur, dapur, dan ruang tamu bersama.</p>
+              <a class="btn btn-card" href="https://api.whatsapp.com/send/?phone=6282139124468&text=Halo%20Satyagraha%20Suites%20Villa,%20saya%20ingin%20memesan%20%22Villa%20Keluarga%20(2%20Kamar)%22%20(Rp%201.200.000%20/%20malam).%20Apakah%20masih%20tersedia&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">Pesan Sekarang</a>
+            </div>
+          </article>
+
+          <article class="product-card card" id="product-sewa-motor">
+            <img class="product-card-img" src="assets/img/Cuplikan layar 2026-08-08 151551.png" alt="Sewa Motor Matic" loading="lazy" />
+            <div class="product-card-body">
+              <h3>Kamar dengan ruangan outdoor</h3>
+              <p class="product-price">Rp 600.000 / hari</p>
+              <p class="product-desc">Kamar dengan pemandangan indah dan ruangan outdoor yang nyaman.</p>
+              <a class="btn btn-card" href="https://api.whatsapp.com/send/?phone=6282139124468&text=Halo%20Satyagraha%20Suites%20Villa,%20saya%20ingin%20memesan%20%22Kamar%20dengan%20ruangan%20outdoor%22%20(Rp%20600.000%20/%20hari).%20Apakah%20masih%20tersedia&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">Pesan Sekarang</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== FASILITAS ============================== -->
+    <section class="amenities" id="fasilitas">
+      <div class="container">
+        <header class="section-heading section-heading-left">
+          <p class="eyebrow">Fasilitas</p>
+          <h2>Fasilitas Paling Populer</h2>
+        </header>
+        <!-- [PROFIL-KLIEN] Daftar fasilitas — salin-tempel baris <li> untuk menambah.
+             Ikon memakai class Font Awesome: ganti class <i> untuk ikon lain (lihat https://fontawesome.com/icons). -->
+        <ul class="amenities-grid" id="amenities-grid">
+          <li class="amenity-item">
+            <span class="amenity-icon" aria-hidden="true"><i class="fa-solid fa-person-swimming"></i></span>
+            <span>Kolam renang</span>
+          </li>
+          <li class="amenity-item">
+            <span class="amenity-icon" aria-hidden="true"><i class="fa-solid fa-wifi"></i></span>
+            <span>WiFi gratis</span>
+          </li>
+          <li class="amenity-item">
+            <span class="amenity-icon" aria-hidden="true"><i class="fa-solid fa-square-parking"></i></span>
+            <span>Parkir gratis</span>
+          </li>
+          <li class="amenity-item">
+            <span class="amenity-icon" aria-hidden="true"><i class="fa-solid fa-ban-smoking"></i></span>
+            <span>Kamar bebas rokok</span>
+          </li>
+          <li class="amenity-item">
+            <span class="amenity-icon" aria-hidden="true"><i class="fa-solid fa-plane-departure"></i></span>
+            <span>Antar-jemput bandara</span>
+          </li>
+          <li class="amenity-item">
+            <span class="amenity-icon" aria-hidden="true"><i class="fa-solid fa-mug-saucer"></i></span>
+            <span>Sarapan tersedia</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================== ULASAN ============================== -->
+    <section class="testimonials" id="ulasan">
+      <div class="container">
+        <header class="section-heading">
+          <p class="eyebrow">Ulasan</p>
+          <h2>Kata Tamu Kami</h2>
+        </header>
+        <!-- [PROFIL-KLIEN] Ulasan tamu — salin-tempel blok <article> untuk menambah.
+             Inisial avatar dihitung otomatis dari nama. -->
+        <div class="testimonial-grid" id="testimonial-grid">
+          <article class="testimonial-card card">
+            <div class="testimonial-head">
+              <span class="testimonial-avatar" aria-hidden="true">I</span>
+              <div>
+                <p class="testimonial-name">Indah</p>
+                <p class="testimonial-location">Indonesia</p>
+              </div>
+            </div>
+            <p class="testimonial-quote">"Menginap di sini menyenangkan dan sangat mudah diakses, sarapan enak, rekomendasi sekali."</p>
+          </article>
+
+          <article class="testimonial-card card">
+            <div class="testimonial-head">
+              <span class="testimonial-avatar" aria-hidden="true">A</span>
+              <div>
+                <p class="testimonial-name">Abdul</p>
+                <p class="testimonial-location">Uni Emirat Arab</p>
+              </div>
+            </div>
+            <p class="testimonial-quote">"Staf-nya sangat welcome, menu makanan bervariasi, lokasi dekat ke mana-mana."</p>
+          </article>
+
+          <article class="testimonial-card card">
+            <div class="testimonial-head">
+              <span class="testimonial-avatar" aria-hidden="true">H</span>
+              <div>
+                <p class="testimonial-name">Hamzah</p>
+                <p class="testimonial-location">Indonesia</p>
+              </div>
+            </div>
+            <p class="testimonial-quote">"Tempatnya bagus, bersih, dan nyaman. Makanannya enak dan beragam."</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== LOKASI ============================== -->
+    <section class="location" id="lokasi">
+      <div class="container">
+        <div class="location-inner card">
+          <div class="location-text">
+            <p class="eyebrow">Lokasi</p>
+            <h2>Kunjungi Kami</h2>
+            <!-- [PROFIL-KLIEN] Alamat lengkap -->
+            <p id="address-text">Jl. Citandui No.68, Purwantoro, Kec. Blimbing, Kota Malang, Jawa Timur</p>
+          </div>
+          <!-- [PROFIL-KLIEN] Tautan Google Maps -->
+          <a class="btn btn-primary" id="maps-link" href="https://maps.app.goo.gl/E3s5ZVUhnWZ6TR6y5" target="_blank" rel="noopener noreferrer">Buka di Google Maps</a>
+        </div>
+      </div>
+
+      <!-- [PROFIL-KLIEN] Peta tertanam — ganti src dengan koordinat/alamat bisnis Anda.
+           Format koordinat: https://www.google.com/maps?q=-8.5069,115.2625&z=15&output=embed -->
+      <div class="container">
+        <div class="map-embed card" id="map-embed-wrapper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3951.406881353065!2d112.6429294!3d-7.9568359!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6296978431be3%3A0xb3fccd086a9650e7!2sSatyagraha%20Suites%20Villa!5e0!3m2!1sen!2sid!4v1786177879456!5m2!1sen!2sid" 
+            width="600" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== KONTAK ============================== -->
+    <section class="contact" id="kontak">
+      <div class="container">
+        <div class="contact-inner card">
+          <p class="eyebrow">Kontak</p>
+          <h2>Ada Pertanyaan?</h2>
+          <p>Tim kami siap membantu Anda menemukan pilihan terbaik.</p>
+
+          <!-- [PROFIL-KLIEN] Tombol kontak — ganti nomor WA/telepon sesuai bisnis -->
+          <div class="contact-actions" id="contact-actions">
+            <a href="https://api.whatsapp.com/send/?phone=6282139124468&text=Halo+Satyagraha%20Suites%20Villa%2C+saya+ingin+bertanya+lebih+lanjut+mengenai+layanan+Anda.%22&type=phone_number&app_absent=0" id="whatsapp-main-btn" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Chat via WhatsApp
+            </a>
+            <a href="tel:+6282139124468" id="phone-main-btn" class="btn btn-outline">
+              Telepon Kami
+            </a>
+          </div>
+
+          <!-- [PROFIL-KLIEN] Sosial media — salin-tempel baris <li> untuk menambah.
+               Ikon memakai class Font Awesome (fa-brands). -->
+          <ul class="social-links" id="social-links">
+            <li>
+              <a class="social-link" href="https://instagram.com/satyagraha_suites" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a class="social-link" href="https://facebook.com/satyagraha_suites" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+              </a>
+    
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand-block">
+        <!-- [PROFIL-KLIEN] Nama & alamat di footer -->
+        <p class="footer-brand" id="footer-brand-name">Satyagraha Suites Villa</p>
+        <p id="footer-address">Jl. Citandui No.68, Purwantoro, Kec. Blimbing, Kota Malang, Jawa Timur</p>
+      </div>
+      <!-- [PROFIL-KLIEN] Nama bisnis di baris hak cipta -->
+      <p class="footer-copy">&copy; <span id="footer-year"></span> <span id="footer-brand-name-2">Satyagraha Suites Villa</span>. Seluruh hak cipta dilindungi.</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================================
+       SKRIP INLINE (kecil) — hanya untuk interaktivitas ringan.
+       Konten halaman sudah ditulis langsung di HTML di atas, jadi hanya butuh:
+         1) tahun otomatis di footer, dan
+         2) menu navigasi mobile (hamburger).
+  ============================================================================ -->
+  <script>
+    // [PROFIL-KLIEN] Bukan data bisnis — jangan hapus, tapi bebas diedit jika perlu.
+
+    // 1) Set tahun berjalan di footer (lewat id footer-year)
+    document.getElementById("footer-year").textContent = new Date().getFullYear();
+
+    // 2) Menu navigasi mobile (hamburger)
+    (function initMobileNav() {
+      const toggle = document.getElementById("nav-toggle");
+      const nav = document.getElementById("main-nav");
+      if (!toggle || !nav) return;
+
+      toggle.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      nav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("is-open");
+          toggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
