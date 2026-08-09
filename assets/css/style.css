@@ -3,7 +3,7 @@
    ============================================================================
    Untuk klien baru, cukup ubah 5 variabel utama ini:
    --primary-color, --secondary-color, --text-color, --bg-color
-   (logo kini di-set via JS: clientData.logoUrl di script.js)
+   (logo di-set lewat background-image inline pada <span id="logo-img"> di index.html)
    ========================================================================= */
 :root {
   /* --- Variabel utama (ubah sesuai branding klien) --- */
@@ -11,7 +11,7 @@
   --secondary-color: #f8b400;    /* warna aksen/CTA: tombol utama, harga */
   --text-color: #1a1a1a;         /* warna teks utama di atas latar terang */
   --bg-color: #f2f4f7;           /* warna dasar latar belakang halaman */
-  /* Logo kini di-set lewat JS (clientData.logoUrl), bukan variabel CSS ini */
+  /* Logo di-set lewat background-image inline di index.html, bukan variabel CSS ini */
 
   /* --- Turunan otomatis, biasanya tidak perlu diubah manual --- */
   --primary-color-rgb: 0, 53, 128;
@@ -132,7 +132,7 @@ button { font-family: inherit; cursor: pointer; }
   height: 34px;
   border-radius: 50%;
   background-color: rgba(var(--primary-color-rgb), 0.1);
-  /* Gambar logo (logoUrl) di-set langsung oleh JS lewat inline style, bukan variabel CSS */
+  /* Gambar logo di-set lewat background-image inline di index.html, bukan variabel CSS */
   background-size: cover;
   background-position: center;
   flex-shrink: 0;
@@ -141,6 +141,10 @@ button { font-family: inherit; cursor: pointer; }
 .brand-logo-img.has-logo {
   background-color: transparent;
   border: 1px solid var(--border-color);
+}
+
+.brand-name {
+  user-select: none;
 }
 
 .main-nav {
@@ -380,7 +384,7 @@ button { font-family: inherit; cursor: pointer; }
 .catalog, .amenities, .testimonials, .location, .contact { padding: 56px 0; }
 
 /* ============================================================================
-   8. KATALOG PRODUK (kartu dirender via JavaScript)
+   8. KATALOG PRODUK (kartu statis di index.html)
    ============================================================================ */
 .product-grid {
   display: grid;
@@ -434,7 +438,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* ============================================================================
-   9. FASILITAS (amenities — ikon + label, dirender via JavaScript)
+   9. FASILITAS (amenities — ikon + label, statis di index.html)
    ============================================================================ */
 .amenities-grid {
   display: grid;
@@ -463,7 +467,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* ============================================================================
-   10. TESTIMONI (dirender via JavaScript)
+   10. TESTIMONI (statis di index.html)
    ============================================================================ */
 .testimonial-grid {
   display: grid;
@@ -662,11 +666,32 @@ button { font-family: inherit; cursor: pointer; }
   }
 
   .main-nav a {
+    position: relative;
     padding: 0;
     border-bottom: none;
     font-size: 0.92rem;
     font-weight: 600;
+    transition: color var(--transition-fast);
   }
+
+  /* Efek hover: garis bawah meluncur dari kiri saat pointer di atas link */
+  .main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--secondary-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-med);
+  }
+
+  .main-nav a:hover { color: var(--primary-color); }
+  .main-nav a:hover::after,
+  .main-nav a:focus-visible::after { transform: scaleX(1); }
 }
 
 /* ============================================================================
