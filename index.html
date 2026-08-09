@@ -17,37 +17,51 @@
 
   <!--
     ============================================================================
-    SEO SCHEMA MARKUP (JSON-LD) — TARUH DI SINI
-    ============================================================================
-    Sesuaikan @type dengan jenis bisnis klien:
-      - "LodgingBusiness" -> untuk vila / penginapan / homestay
-      - "LocalBusiness"    -> untuk usaha lokal umum
-      - "Product"          -> bisa ditambahkan per item di dalam "products"
-
-    Contoh:
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LodgingBusiness",
-      "name": "Nama Bisnis Anda",
-      "image": "https://url-gambar-utama.jpg",
-      "telephone": "+62xxxxxxxxxx",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Alamat lengkap",
-        "addressLocality": "Kota",
-        "addressCountry": "ID"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "8.8",
-        "reviewCount": "325"
-      },
-      "priceRange": "$$"
-    }
-    </script>
+    SEO SCHEMA MARKUP (JSON-LD) — data bisnis terstruktur untuk Google.
+    Data diambil dari konten halaman. [PROFIL-KLIEN] Perbarui bila ada yang berubah:
+      - "image"  : ganti ke URL absolut setelah domain dipasang
+      - "telephone", "priceRange", rating, dsb.
     ============================================================================
   -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Satyagraha Suites Villa",
+    "description": "Vila pribadi dengan kolam renang di tengah Kota Malang, Jawa Timur. Pesan langsung melalui WhatsApp.",
+    "image": "assets/img/view-vila-dari-atas.webp",
+    "telephone": "+6282139124468",
+    "url": "https://wa.me/6282139124468",
+    "priceRange": "Rp 450.000 - Rp 1.200.000",
+    "checkinTime": "14:00",
+    "checkoutTime": "12:00",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Citandui No.68, Purwantoro, Kec. Blimbing",
+      "addressLocality": "Kota Malang",
+      "addressRegion": "Jawa Timur",
+      "addressCountry": "ID"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -7.9568359,
+      "longitude": 112.6429294
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "8.8",
+      "bestRating": "10",
+      "reviewCount": "325"
+    },
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Kolam renang" },
+      { "@type": "LocationFeatureSpecification", "name": "WiFi gratis" },
+      { "@type": "LocationFeatureSpecification", "name": "Parkir gratis" },
+      { "@type": "LocationFeatureSpecification", "name": "Sarapan" }
+    ]
+  }
+  </script>
+
 
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
@@ -82,6 +96,7 @@
             <li><a href="#hero">Beranda</a></li>
             <li><a href="#katalog">Katalog</a></li>
             <li><a href="#ulasan">Ulasan</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="#lokasi">Lokasi</a></li>
             <li><a href="#kontak" class="nav-cta">Hubungi Kami</a></li>
           </ul>
@@ -133,6 +148,15 @@
           <!-- [PROFIL-KLIEN] Kutipan singkat dari tamu (boleh dikosongkan) -->
           <p class="rating-quote" id="rating-quote">"Menginap di sini menyenangkan dan sangat mudah diakses."</p>
           <hr class="divider" id="hero-panel-divider" />
+          <!-- [PROFIL-KLIEN] Tombol booking pihak ketiga — ganti href dengan link langsung properti
+               jika sudah terdaftar di platform tsb (booking.com/hotel/..., traveloka/... , agoda/...).
+               Link sekarang mengarah ke pencarian nama properti, tetap berfungsi sampai link langsung disediakan. -->
+          <div class="platform-list" id="platform-list">
+            <span class="platform-label" id="platform-label">Tersedia di</span>
+            <a class="platform-link" href="https://www.traveloka.com/id-id/hotel/indonesia/satyagraha-suites-9000001150751" target="_blank" rel="noopener noreferrer">Traveloka</a>
+            <a class="platform-link" href="https://www.agoda.com/en-nz/satyagraha-suites-villa/hotel/malang-id.html?ds=hX1MuFhbdnDoFxNv" target="_blank" rel="noopener noreferrer">Agoda</a>
+            <a class="platform-link" href="https://www.tiket.com/id-id/homes/indonesia/satya-graha-suite-701001704328263721" target="_blank" rel="noopener noreferrer">Tiket.com</a>
+          </div>
           <!-- [PROFIL-KLIEN] Alamat di panel hero -->
           <p class="hero-panel-address" id="hero-panel-address">Jl. Citandui No.68, Purwantoro, Kec. Blimbing, Kota Malang, Jawa Timur</p>
         </aside>
@@ -268,20 +292,20 @@
             <div class="testimonial-head">
               <span class="testimonial-avatar" aria-hidden="true">A</span>
               <div>
-                <p class="testimonial-name">Abdul</p>
+                <p class="testimonial-name">Elisa Vetri Vinanti</p>
               </div>
             </div>
-            <p class="testimonial-quote">"Staf-nya sangat welcome, menu makanan bervariasi, lokasi dekat ke mana-mana."</p>
+            <p class="testimonial-quote">"rekomendasi villa yg bagus, nyaman, estetik, fasilitas lengkap di pusat kota malang cocok banget buat kumpul sama keluarga atau bestiee, semoga bisa kesini lagi nanti🥰🫰🏻💗"</p>
           </article>
 
           <article class="testimonial-card card">
             <div class="testimonial-head">
               <span class="testimonial-avatar" aria-hidden="true">H</span>
               <div>
-                <p class="testimonial-name">Hamzah</p>
+                <p class="testimonial-name">Salsa Billa</p>
               </div>
             </div>
-            <p class="testimonial-quote">"Tempatnya bagus, bersih, dan nyaman. Makanannya enak dan beragam."</p>
+            <p class="testimonial-quote">"tempat nyaman aestetic bgt ada kolam renang yang makin bikin seru bareng temen ataupun keluarga recomed banget"</p>
           </article>
         </div>
       </div>
@@ -315,6 +339,35 @@
             loading="lazy" 
             referrerpolicy="strict-origin-when-cross-origin"
             ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== FAQ ============================== -->
+    <!-- [PROFIL-KLIEN] FAQ — tulis pertanyaan & jawaban sesuai bisnis. -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <header class="section-heading">
+          <p class="eyebrow">FAQ</p>
+          <h2>Pertanyaan Umum</h2>
+        </header>
+        <div class="faq-list" id="faq-list">
+          <details class="faq-item" open>
+            <summary>Jam check-in dan check-out?</summary>
+            <p>Check-in mulai pukul 14.00 dan check-out paling lambat pukul 12.00. Bisa dinegosiasikan bila ketersediaan mendukung.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Apakah perlu uang deposit?</summary>
+            <p>Ya, deposit sebesar Rp 300.000 dibayarkan saat check-in dan dikembalikan saat check-out.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Berapa kapasitas maksimal tamu?</summary>
+            <p>Villa keluarga hingga 8 orang, suite kolam pribadi hingga 4 orang.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Apakah sarapan sudah termasuk?</summary>
+            <p>Sarapan tersedia dengan biaya tambahan atau bisa disesuaikan saat pemesanan.</p>
+          </details>
         </div>
       </div>
     </section>
@@ -356,6 +409,12 @@
     </section>
 
   </main>
+
+  <!-- Tombol WhatsApp melayang: shortcut chat di semua sudut halaman -->
+  <!-- [PROFIL-KLIEN] Nomor & pesan WA — sesuaikan bila ganti nomor -->
+  <a href="https://api.whatsapp.com/send/?phone=6282139124468&text=Halo+Satyagraha%20Suites%20Villa%2C+saya+ingin+bertanya+lebih+lanjut+mengenai+layanan+Anda.&type=phone_number&app_absent=0" class="wa-float" id="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat via WhatsApp">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+  </a>
 
   <!-- ============================== FOOTER ============================== -->
   <footer class="site-footer">

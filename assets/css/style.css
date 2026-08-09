@@ -318,6 +318,44 @@ button { font-family: inherit; cursor: pointer; }
 
 .hero-panel-address { margin: 0; font-size: 0.88rem; color: var(--muted-text); }
 
+/* Tombol booking pihak ketiga di panel hero */
+.platform-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.platform-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted-text);
+  margin-right: 4px;
+}
+
+.platform-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  background: var(--surface);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+}
+
+.platform-link:hover {
+  background: var(--primary-color);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
 /* ============================================================================
    6. TOMBOL (buttons)
    ============================================================================ */
@@ -381,7 +419,25 @@ button { font-family: inherit; cursor: pointer; }
 
 .section-desc { color: var(--muted-text); }
 
-.catalog, .amenities, .testimonials, .location, .contact { padding: 56px 0; }
+.catalog, .amenities, .testimonials, .faq, .location, .contact { padding: 56px 0; }
+
+/* Pembatas antar section (kecuali hero→katalog): garis dengan tengah putus
+   (bagian tengah ditutup warna latar, sehingga terkesan terputus) */
+.amenities, .testimonials, .faq, .location, .contact {
+  border-top: 2px solid var(--border-color);
+  position: relative;
+}
+
+.amenities::before, .testimonials::before, .faq::before, .location::before, .contact::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 6px;
+  background: var(--bg-color);
+}
 
 /* ============================================================================
    8. KATALOG PRODUK (kartu statis di index.html)
@@ -500,8 +556,60 @@ button { font-family: inherit; cursor: pointer; }
   flex-shrink: 0;
 }
 
-.testimonial-name { font-weight: 700; font-size: 0.95rem; }
+.testimonial-name { font-weight: 700; font-size: 0.95rem; margin: 0; }
 .testimonial-quote { font-size: 0.92rem; color: var(--text-color); margin: 0; }
+
+/* ============================================================================
+   10b. FAQ (native <details>/<summary> — tanpa JavaScript)
+   ============================================================================ */
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq-item {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.faq-item summary {
+  padding: 14px 18px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+}
+
+/* ikon plus/silang pakai poin & plus, ganti lewat Font Awesome bila mau */
+.faq-item summary::after {
+  content: "+";
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 18px 16px;
+  font-size: 0.92rem;
+  color: var(--muted-text);
+}
 
 /* ============================================================================
    11. LOKASI
@@ -580,6 +688,49 @@ button { font-family: inherit; cursor: pointer; }
   background: var(--primary-color);
   color: #fff;
   transform: translateY(-2px);
+}
+
+/* ============================================================================
+   12b. TOMBOL WHATSAPP MELAYANG (floating)
+   ============================================================================ */
+.wa-float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 90;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.wa-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+}
+
+/* Pulsa halus agar tombol WA menonjol di semua halaman */
+.wa-float::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #25d366;
+  animation: wa-ring 2s ease-out infinite;
+  z-index: -1;
+}
+
+@keyframes wa-ring {
+  0%   { transform: scale(1);    opacity: 0.55; }
+  70%  { transform: scale(1.55); opacity: 0; }
+  100% { transform: scale(1.55); opacity: 0; }
 }
 
 /* ============================================================================
