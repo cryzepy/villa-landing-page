@@ -490,7 +490,44 @@ button { font-family: inherit; cursor: pointer; }
 .product-desc {
   color: var(--muted-text);
   font-size: 0.9rem;
+}
+
+/* Daftar fasilitas khusus di dalam tiap kartu produk */
+.product-facilities {
   flex-grow: 1;
+  margin-bottom: 14px;
+}
+
+.facilities-title {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted-text);
+  margin-bottom: 6px;
+}
+
+.product-facilities ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px 12px;
+}
+
+.product-facilities li {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
+.product-facilities li i {
+  color: #16a34a;
+  font-size: 0.72rem;
+  margin-top: 3px;
+  flex-shrink: 0;
 }
 
 /* ============================================================================
@@ -645,6 +682,72 @@ button { font-family: inherit; cursor: pointer; }
   max-height: 360px;
 }
 
+/* Objek terdekat — kartu kategori lokasi dalam section Lokasi */
+.nearby { margin-top: 28px; }
+.nearby-heading { text-align: center; margin-bottom: 16px; }
+.nearby-heading .eyebrow { margin-bottom: 0.3em; }
+.nearby-heading h3 { font-size: 1.15rem; margin: 0; }
+
+.nearby-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.nearby-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.nearby-icon {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--primary-color-rgb), 0.08);
+  color: var(--primary-color);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+}
+
+.nearby-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nearby-category {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted-text);
+}
+
+.nearby-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.nearby-distance {
+  font-size: 0.8rem;
+  color: var(--muted-text);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nearby-distance i { color: var(--secondary-color); }
+
 /* ============================================================================
    12. KONTAK
    ============================================================================ */
@@ -758,6 +861,7 @@ button { font-family: inherit; cursor: pointer; }
 @media (min-width: 640px) {
   .product-grid { grid-template-columns: repeat(2, 1fr); }
   .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
+  .nearby-grid { grid-template-columns: repeat(2, 1fr); }
 
   .location-inner {
     flex-direction: row;
@@ -789,6 +893,7 @@ button { font-family: inherit; cursor: pointer; }
   .product-grid { grid-template-columns: repeat(3, 1fr); }
   .testimonial-grid { grid-template-columns: repeat(3, 1fr); }
   .amenities-grid { grid-template-columns: repeat(3, 1fr); }
+  .nearby-grid { grid-template-columns: repeat(3, 1fr); }
 
   .hero-grid {
     grid-template-columns: 1.4fr 1fr;
