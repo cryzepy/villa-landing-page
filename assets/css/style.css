@@ -703,10 +703,11 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .nearby-card-head {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
   align-items: center;
   gap: 10px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .nearby-icon {
@@ -883,6 +884,7 @@ button { font-family: inherit; cursor: pointer; }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
   .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
   .nearby-grid { grid-template-columns: repeat(2, 1fr); }
+  .nearby-card { padding: 18px; }
 
   .location-inner {
     flex-direction: row;
@@ -915,6 +917,7 @@ button { font-family: inherit; cursor: pointer; }
   .testimonial-grid { grid-template-columns: repeat(3, 1fr); }
   .amenities-grid { grid-template-columns: repeat(3, 1fr); }
   .nearby-grid { grid-template-columns: repeat(3, 1fr); }
+  .nearby-card { padding: 20px; }
 
   .hero-grid {
     grid-template-columns: 1.4fr 1fr;
